@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-top: 60px;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #00c8ff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100vw;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo-text {
+            color: rgb(0, 251, 255);
+            font-size: 1.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.3s ease;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            color: rgb(0, 200, 255);
+            text-decoration: none;
+        }
+
+        .info {
+            text-align: right;
+        }
+
+        .info-text {
+            font-size: 14px;
+        }
+
+        .play-button {
+            background-color: #ff6200;
+            border: none;
+            border-radius: 50%;
+            width: 4vw;
+            height: 6vh;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            width: auto;
+            height: auto;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 40px solid #fff;
+        }
+
+        .play-button:hover .play-icon {
+            border-left-color: #ff0000;
+        }
+
+        @media (max-width: 576px) {
+            body {
+                padding-top: 0;
+            }
+        }
+
+
+
+        .half-page {
+            height: 60vh;
+            /* Cover the full viewport height */
+            width: 100%;
+            /* Cover the full viewport width */
+            background-color: #f8f9fa;
+            /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .half-page2 {
+            height: 25vh;
+            /* Cover the full viewport height */
+            width: 100%;
+            /* Cover the full viewport width */
+            background-color: #f8f9fa;
+            /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Custom styling for the card section */
+        .card-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .card1 {
+            width: 23%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .card .card1 {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card .card1 {
+                width: 100%;
+            }
+        }
+
+        /* Styling for the social media buttons */
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: solid black;
+            border-radius: 50%;
+            width: auto;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* Original colors for social media icons */
+        .btn-email {
+            /* background-color: #007bff; */
+            color: #ff3b3b;
+
+        }
+
+        .btn-linkedin {
+            /* background-color: #0077b5; */
+            color: #0077b5;
+        }
+
+        .btn-instagram {
+            /* background-color: #e4405f; */
+            color: #e4405f;
+        }
+
+        .btn-twitter {
+            /* background-color: #1da1f2; */
+            color: #1da1f2;
+        }
+
+        .btn-facebook {
+            /* background-color: #1877f2; */
+            color: #1877f2;
+        }
+
+        .cta-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: solid rgb(148, 223, 238) 3px;
+            margin-right: 75%;
+            margin-top: 2%;
+            margin-left: 2%;
+
+        }
+
+        .cta-email {
+            width: 50%;
+            padding: 10px;
+            margin-right: 20px;
+            border: solid rgb(148, 223, 238) 3px;
+
+        }
+
+        .cta-button {
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: solid rgb(148, 223, 238) 3px;
+            border-radius: 30%;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 20%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-right: 20px;
+            border: solid rgb(148, 223, 238) 3px;
+
+        }
+
+        .card h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .cta-container {
+                flex-direction: column;
+            }
+
+            .cta-email {
+                width: 50%;
+            }
+
+            .card-container {
+                flex-direction: column;
+            }
+
+            .card {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* home section */
+        .jumbotron-fluid {
+            margin: 0;
+            padding: 0;
+        }
+
+        .jumbotron-wrap {
+            position: relative;
+            top: -8px;
+            width: 100%;
+            height: 100vh;
+            background-image: url("./images/R.jfif");
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .jumbo-content {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+        }
+
+        .display-4 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #771515d3;
+            letter-spacing: 0.2rem;
+        }
+
+        .lead,
+        .btn-lg {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #143d48;
+        }
+
+        .btn-lg:hover {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #771515d3;
+            text-decoration: underline;
+        }
+
+        /* about section */
+        .about-wrap {
+            width: 100%;
+            padding: 2rem 1rem;
+            background-color: #cfebea;
+        }
+
+        /* our services section */
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3e7715d3;
+            letter-spacing: 1px;
+        }
+
+        .card-title-2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #771515d3;
+            letter-spacing: 1px;
+        }
+
+        .card-text,
+        .form-group {
+            color: #143d48;
+        }
+
+        /* footer section */
+        .btn {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #143d48;
+        }
+
+        .btn:hover {
+            font-size: 1.2rem;
+            text-decoration: underline;
+            font-weight: 500;
+            color: #771515d3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <div class="logo">
+                <span class="logo-text">M</span><span style="color: blue;">edical</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Location</a></li>
+                </ul>
+            </nav>
+            <div class="info">
+                <span class="info-text">Call us: 123-456-7890</span>
+            </div>
+        </header>
+
+        <!-- Add your page content here -->
+        <div class="main-expand-lg">
+
+            <div class="half-page" style="background-color: rgb(213, 247, 255);">
+                <!-- Content for the half-page div -->
+                <div class="headline">
+                    <h1 style="color: blueviolet;">Quality Medical <br> Treatment</h1>
+                    <h3 style="color: rgb(43, 208, 226);">for You and Your Family</h3>
+                    <h5>
+                        <button class="play-button">
+                            <span class="play-icon"></span>
+                        </button>
+                        <span style="color: rgb(0, 26, 255);">Watch our video</span>
+
+                    </h5>
+                </div>
+
+                <img src="https://assets-global.website-files.com/5f60de9107fc6ccf45e18805/60089fc3099ce43934b7b841_familywithkids.png"
+                    style="height: 70%;" srcset="">
+
+            </div>
+            <section id="services" class="container my-5">
+                <h2 class="text-center mb-4 display-4">Our Services</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: auto;">
+                            <img src="./images/consultation.jpg" class="card-img-top" alt="Service Image">
+                            <div class="card-body">
+                                <h5 class="card-title ">Medical Consultation</h5>
+                                <p class="card-text">Our experienced doctors provide comprehensive medical
+                                    consultations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: auto;">
+                            <img src="./images/emergency_0.jpg" class="card-img-top" alt="Service Image">
+                            <div class="card-body">
+                                <h5 class="card-title-2 ">Emergency Care</h5>
+                                <p class="card-text mb-2">We are available 24/7 for emergency medical care.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card" style="width: auto;">
+                            <img src="./images/LUH-NICU-DrPatient-004_1.jpg" class="card-img-top" alt="Service Image">
+                            <div class="card-body">
+                                <h5 class="card-title ">Specialized Treatments</h5>
+                                <p class="card-text">Offering specialized treatments for various medical conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- appointment section  -->
+            <section class="container my-5">
+                <h2 class="display-4 text-center mb-4">Make an appointment</h2>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                            </div>
+
+                            <button type="submit" class="my-3 btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer style="background-color: #1e4854; color: aliceblue; font-size: 1.3rem;" class="text-light py-5">
+                <div class="container text-center">
+                    <p>&copy; 2024 Medical Clinic. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
