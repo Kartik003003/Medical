@@ -17,13 +17,14 @@
         header {
             background-color: #ffffff;
             color: #00c8ff;
-            padding: 15px;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            width: 100vw;
             top: 0;
+            right: 0;
+            left: 0;
             z-index: 1000;
         }
 
@@ -239,7 +240,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             margin-right: 20px;
             border: solid rgb(148, 223, 238) 3px;
+            transition: box-shadow 1s;
+        }
 
+        .card:hover {
+            box-shadow: #333 15px 15px 14px 13px;
         }
 
         .card h3 {
@@ -313,6 +318,7 @@
             font-weight: 500;
             color: #771515d3;
             text-decoration: underline;
+            box-shadow: #333 15px 15px 14px 13px;
         }
 
         /* about section */
