@@ -239,6 +239,15 @@ nav a:hover {
 .card:hover {
     box-shadow: #333 15px 15px 14px 13px;
 }
+.card img{
+    filter: opacity(50%);
+}
+.card:hover img{
+    filter: none;
+    scale: 1.2;
+    border-radius: 10%;
+    overflow: hidden;
+}
 
 .card h3 {
     margin-top: 20px;
@@ -275,22 +284,6 @@ nav a:hover {
     padding: 0;
 }
 
-.jumbotron-wrap {
-    position: relative;
-    top: -8px;
-    width: 100%;
-    height: 100vh;
-    background-image: url("./images/R.jfif");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.jumbo-content {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
-}
 
 .display-4 {
     font-size: 3rem;
@@ -299,20 +292,6 @@ nav a:hover {
     letter-spacing: 0.2rem;
 }
 
-.lead,
-.btn-lg {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #143d48;
-}
-
-.btn-lg:hover {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #771515d3;
-    text-decoration: underline;
-    box-shadow: #333 15px 15px 14px 13px;
-}
 
 /* about section */
 .about-wrap {
@@ -354,3 +333,65 @@ nav a:hover {
     font-weight: 500;
     color: #771515d3;
 }
+.services{
+    animation-duration: 2s;
+
+}
+@keyframes move {
+    0%{
+
+    }
+    100%{
+
+    }
+    
+}
+
+footer{
+    background-color: #1e542e;
+    color: aliceblue;
+    font-size: 1rem;
+}
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .card {
+    flex: 0 0 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
