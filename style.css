@@ -395,3 +395,8 @@ footer{
   .arrow-right {
     right: 10px;
   }
+
+  #carouselExampleIndicators{
+    padding: 5px 10px;
+
+  }
